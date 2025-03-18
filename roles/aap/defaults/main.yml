@@ -1,2 +1,41 @@
 ---
 # defaults file for aap
+
+# Location of the ansible configuration file or the path to be created
+
+lb2193_aap_caac_aap_ansible_cfg_path : "/etc/ansible/ansible.cfg"
+
+# PAH repos configuration
+
+# The below variables will be used for PAH authentication. 
+lb2193_aap_caac_aap_private_ah_username: {{ ssh_username }}
+
+lb2193_aap_caac_aap_private_ah_password : {{ ssh_password }}
+
+# lb2193_aap_caac_aap_private_ah_repos: 
+# - name: this will tell the name to be defined in server_list 
+#   url: this is the URL to be configured for repo
+
+
+lb2193_aap_caac_aap_private_ah_repos: 
+ - name: rh-certified
+   url: "https://{{nginx_web_url}}/pulp_ansible/galaxy/rh-certified/"
+ - name: validated
+   url: "https://{{nginx_web_url}}/pulp_ansible/galaxy/validated/"
+ - name: community
+   url: "https://{{nginx_web_url}}/pulp_ansible/galaxy/community/"
+
+# cloning github repo on the particular destination: 
+
+lb2193_aap_caac_aap_github_repo : " https://github.com/sean-m-sullivan/config_as_code_instruqt.git"
+lb2193_aap_caac_aap_clone_destination_path : "/home/lab-user/casc_lab/" 
+lb2193_aap_caac_aap_github_version: "base_files"
+
+# List of collection to be installed
+lb2193_aap_caac_aap_collections_list:
+ - "ansible.platform:==2.5.20250213"
+ - "ansible.controller:==4.6.8"
+ - "containers.podman:==1.16.3"
+ - "infra.ee_utilities:==4.0.0"
+ - "infra.aap_configuration:==3.1.0"
+ - "ansible.hub:==1.0.0"

@@ -1,6 +1,6 @@
 galaxy_info:
   author: Amrinder Singh
-  description: Customer role to do the configuration of PAH and installation of the collection for the Red Hat summit lab 2193. 
+  description: This Role is to do changes in the nginx configuration
   company: your company (optional)
 
   # If the issue tracker for your role is not on github, uncomment the

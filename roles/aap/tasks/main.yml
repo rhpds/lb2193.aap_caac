@@ -1,2 +1,34 @@
 ---
 # tasks file for aap
+- name: Ensure ansible.cfg exists
+  ansible.builtin.file:
+    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}"
+    state: touch
+    mode: "0644"
+
+- name: Configure ansible.cfg for Private Automation Hub
+  ansible.builtin.blockinfile:
+    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}"
+    block: |
+      [galaxy]
+      server_list = {{ lb2193_aap_caac_aap_private_ah_repos | map(attribute='name') | join(', ') }}
+
+      {% for repo in lb2193_aap_caac_aap_private_ah_repos %}
+      [galaxy_server.{{ repo.name }}]
+      url={{ repo.url }}
+      username={{ lb2193_aap_caac_aap_private_ah_username }}
+      password={{ lb2193_aap_caac_aap_private_ah_password }}
+      {% endfor %}
+    marker: "# {mark} ANSIBLE MANAGED PRIVATE AUTOMATION HUB CONFIGURATION"
+
+- name: Clone of a github branch
+  ansible.builtin.git:
+    repo: {{ lb2193_aap_caac_aap_github_repo }} 
+    dest: {{ lb2193_aap_caac_aap_clone_destination_path }} 
+    single_branch: yes
+    version: {{ lb2193_aap_caac_aap_github_version }}
+
+- name: Install specific Ansible collections
+  ansible.builtin.command: ansible-galaxy collection install {{ item }}
+  loop: "{{ lb2193_aap_caac_aap_collections_list }}"
+  when: lb2193_aap_caac_aap_collections_list | length > 0

@@ -23,10 +23,10 @@
 
 - name: Clone of a github branch
   ansible.builtin.git:
-    repo: {{ lb2193_aap_caac_aap_github_repo }} 
-    dest: {{ lb2193_aap_caac_aap_clone_destination_path }} 
+    repo: '{{ lb2193_aap_caac_aap_github_repo }}'
+    dest: '{{ lb2193_aap_caac_aap_clone_destination_path }}'
     single_branch: yes
-    version: {{ lb2193_aap_caac_aap_github_version }}
+    version: '{{ lb2193_aap_caac_aap_github_version }}'
 
 - name: Install specific Ansible collections
   ansible.builtin.command: ansible-galaxy collection install {{ item }}

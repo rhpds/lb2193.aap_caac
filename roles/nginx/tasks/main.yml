@@ -6,4 +6,4 @@
     insertafter: '    keepalive_timeout   65;'
     line: '    client_max_body_size 0;'
   become: true
-  #notify: Restart Nginx
+  notify: Reload Nginx

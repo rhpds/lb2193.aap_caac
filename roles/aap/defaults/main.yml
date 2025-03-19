@@ -8,9 +8,9 @@ lb2193_aap_caac_aap_ansible_cfg_path : "/etc/ansible/ansible.cfg"
 # PAH repos configuration
 
 # The below variables will be used for PAH authentication. 
-lb2193_aap_caac_aap_private_ah_username: '{{ ansible_automation_platform_configuration_username }}'
+lb2193_aap_caac_aap_private_ah_username: '{{ aap_username }}'
 
-lb2193_aap_caac_aap_private_ah_password : '{{ ansible_automation_platform_configuration_password }}'
+lb2193_aap_caac_aap_private_ah_password : '{{ aap_password }}'
 
 # lb2193_aap_caac_aap_private_ah_repos: 
 # - name: this will tell the name to be defined in server_list 
@@ -19,11 +19,11 @@ lb2193_aap_caac_aap_private_ah_password : '{{ ansible_automation_platform_config
 
 lb2193_aap_caac_aap_private_ah_repos: 
  - name: rh-certified
-   url: "https://{{ansible_automation_platform_configuration_host}}/pulp_ansible/galaxy/rh-certified/"
+   url: "{{aap_hostname}}/pulp_ansible/galaxy/rh-certified/"
  - name: validated
-   url: "https://{{ansible_automation_platform_configuration_host}}/pulp_ansible/galaxy/validated/"
+   url: "{{aap_hostname}}/pulp_ansible/galaxy/validated/"
  - name: community
-   url: "https://{{ansible_automation_platform_configuration_host}}/pulp_ansible/galaxy/community/"
+   url: "{{aap_hostname}}/pulp_ansible/galaxy/community/"
 
 # cloning github repo on the particular destination: 
 

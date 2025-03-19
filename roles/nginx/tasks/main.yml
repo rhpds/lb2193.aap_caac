@@ -1,6 +1,6 @@
 ---
 # tasks file for nginx
-- name: Fix Podman upload in Nginx
+- name: Changing Nginx client max body size Value
   ansible.builtin.lineinfile:
     path: "{{ lb2193_aap_caac_nginx_conf_path }}"
     insertafter: '    keepalive_timeout   65;'

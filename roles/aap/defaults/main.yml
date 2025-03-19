@@ -8,9 +8,9 @@ lb2193_aap_caac_aap_ansible_cfg_path : "/etc/ansible/ansible.cfg"
 # PAH repos configuration
 
 # The below variables will be used for PAH authentication. 
-lb2193_aap_caac_aap_private_ah_username: '{{ ssh_username }}'
+lb2193_aap_caac_aap_private_ah_username: '{{ ansible_automation_platform_configuration_username }}'
 
-lb2193_aap_caac_aap_private_ah_password : '{{ ssh_password }}'
+lb2193_aap_caac_aap_private_ah_password : '{{ ansible_automation_platform_configuration_password }}'
 
 # lb2193_aap_caac_aap_private_ah_repos: 
 # - name: this will tell the name to be defined in server_list 

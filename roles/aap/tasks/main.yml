@@ -32,3 +32,4 @@
   ansible.builtin.command: ansible-galaxy collection install {{ item }}
   loop: "{{ lb2193_aap_caac_aap_collections_list }}"
   when: lb2193_aap_caac_aap_collections_list | length > 0
+  ignore_errors: yes

@@ -19,11 +19,11 @@ lb2193_aap_caac_aap_private_ah_password : '{{ ssh_password }}'
 
 lb2193_aap_caac_aap_private_ah_repos: 
  - name: rh-certified
-   url: "https://{{nginx_web_url}}/pulp_ansible/galaxy/rh-certified/"
+   url: "https://{{ansible_automation_platform_configuration_host}}/pulp_ansible/galaxy/rh-certified/"
  - name: validated
-   url: "https://{{nginx_web_url}}/pulp_ansible/galaxy/validated/"
+   url: "https://{{ansible_automation_platform_configuration_host}}/pulp_ansible/galaxy/validated/"
  - name: community
-   url: "https://{{nginx_web_url}}/pulp_ansible/galaxy/community/"
+   url: "https://{{ansible_automation_platform_configuration_host}}/pulp_ansible/galaxy/community/"
 
 # cloning github repo on the particular destination: 
 

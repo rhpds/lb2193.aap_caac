@@ -39,3 +39,30 @@ lb2193_aap_caac_aap_collections_list:
  - "infra.ee_utilities:==4.0.0"
  - "infra.aap_configuration:==3.1.0"
  - "ansible.hub:==1.0.0"
+
+
+lb2193_aap_caac_aap_hub_collection_remotes:
+  - name: community
+    url: https://galaxy.ansible.com/
+    requirements:
+      - name: infra.ee_utilities
+        version: ">=4.0.0"
+      - name: infra.aap_utilities
+        version: ">=2.5.2"
+      - name: containers.podman
+        version: ">=1.13.0"
+      - name: community.general
+        version: ">=10.4.0"
+      - name: infra.aap_configuration
+        version: ">=3.1.0"
+      - name: awx.awx
+
+
+lb2193_aap_caac_aap_hub_collection_repositories:
+  - name: community
+    description: "description of community repository"
+    pulp_labels:
+      pipeline: "approved"
+    distribution:
+      state: present
+    remote: community

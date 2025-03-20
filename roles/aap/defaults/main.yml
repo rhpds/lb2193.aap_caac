@@ -41,7 +41,7 @@ lb2193_aap_caac_aap_collections_list:
  - "ansible.hub:==1.0.0"
 
 
-lb2193_hub_collection_remotes:
+lb2193_aap_caac_aap_hub_collection_remotes:
   - name: community
     url: https://galaxy.ansible.com/
     requirements:
@@ -58,7 +58,7 @@ lb2193_hub_collection_remotes:
       - name: awx.awx
 
 
-lb2193_hub_collection_repositories:
+lb2193_aap_caac_aap_hub_collection_repositories:
   - name: community
     description: "description of community repository"
     pulp_labels:

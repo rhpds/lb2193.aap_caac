@@ -1,11 +1,5 @@
 ---
 # tasks file for aap
-- name: Install specific Ansible collections
-  ansible.builtin.command: ansible-galaxy collection install {{ item }}
-  loop: "{{ lb2193_aap_caac_aap_collections_list }}"
-  when: lb2193_aap_caac_aap_collections_list | length > 0
-  ignore_errors: yes
-  
 - name: Ensure ansible.cfg exists
   ansible.builtin.file:
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}"

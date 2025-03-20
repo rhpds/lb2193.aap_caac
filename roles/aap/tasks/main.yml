@@ -33,3 +33,23 @@
   loop: "{{ lb2193_aap_caac_aap_collections_list }}"
   when: lb2193_aap_caac_aap_collections_list | length > 0
   ignore_errors: yes
+
+- name: Include collection remote role
+  ansible.builtin.include_role:
+    name: infra.aap_configuration.hub_collection_remote
+  vars:
+    hub_collection_remotes: '{{ lb2193_hub_collection_remotes }}'
+
+- name: Include collection repository role
+  ansible.builtin.include_role:
+    name: infra.aap_configuration.hub_collection_repository
+  vars:
+    hub_collection_repositories: '{{ lb2193_hub_collection_repositories }}'
+
+- name: Include collection repository role
+  ansible.builtin.include_role:
+    name: infra.aap_configuration.hub_collection_repository_sync
+  vars:
+    hub_collection_repositories: '{{ lb2193_hub_collection_repositories }}'
+    hub_configuration_collection_repository_sync_async_delay: 5
+    hub_configuration_collection_repository_sync_async_retries: 150

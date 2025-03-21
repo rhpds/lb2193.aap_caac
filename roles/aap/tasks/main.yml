@@ -1,5 +1,14 @@
 ---
 # tasks file for aap
+- name: Clone of a github branch
+  ansible.builtin.git:
+    repo: '{{ lb2193_aap_caac_aap_github_repo }}'
+    dest: '{{ lb2193_aap_caac_aap_clone_destination_path }}'
+    single_branch: yes
+    version: '{{ lb2193_aap_caac_aap_github_version }}'
+    become: yes
+    become_user: "{{ lb2193_aap_caac_aap_ssh_username }}"
+    
 - name: Ensure ansible.cfg exists
   ansible.builtin.file:
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg"
@@ -24,15 +33,6 @@
       password={{ lb2193_aap_caac_aap_private_ah_password }}
       {% endfor %}
     marker: "# {mark} ANSIBLE MANAGED PRIVATE AUTOMATION HUB CONFIGURATION"
-
-- name: Clone of a github branch
-  ansible.builtin.git:
-    repo: '{{ lb2193_aap_caac_aap_github_repo }}'
-    dest: '{{ lb2193_aap_caac_aap_clone_destination_path }}'
-    single_branch: yes
-    version: '{{ lb2193_aap_caac_aap_github_version }}'
-    become: yes
-    become_user: "{{ lb2193_aap_caac_aap_ssh_username }}"
 
 - name: Include collection remote role
   ansible.builtin.include_role:

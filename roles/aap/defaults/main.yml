@@ -5,7 +5,7 @@
 
 lb2193_aap_caac_aap_ansible_cfg_path : "/home/lab-user/casc_lab/"
 
-# username for calling the repo:
+# username used to run the aap role
 lb2193_aap_caac_aap_ssh_username: '{{ student_name }}'
 
 # PAH repos configuration

@@ -3,7 +3,7 @@
 
 # Location of the ansible configuration file or the path to be created
 
-lb2193_aap_caac_aap_ansible_cfg_path : "/etc/ansible/ansible.cfg"
+lb2193_aap_caac_aap_ansible_cfg_path : "/home/lab-user/casc_lab/"
 
 # PAH repos configuration
 

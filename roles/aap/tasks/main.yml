@@ -5,8 +5,8 @@
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg"
     state: touch
     mode: "0644"
-    owner: lab-user
-    group: lab-user
+    owner: "{{ lb2193_aap_caac_aap_ssh_username }}"
+    group: "{{ lb2193_aap_caac_aap_ssh_username }}"
 
 - name: Configure ansible.cfg for Private Automation Hub
   ansible.builtin.blockinfile:
@@ -32,7 +32,7 @@
     single_branch: yes
     version: '{{ lb2193_aap_caac_aap_github_version }}'
     become: yes
-    become_user: lab-user
+    become_user: "{{ lb2193_aap_caac_aap_ssh_username }}"
 
 - name: Include collection remote role
   ansible.builtin.include_role:

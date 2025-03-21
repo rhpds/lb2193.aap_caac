@@ -6,8 +6,8 @@
     dest: '{{ lb2193_aap_caac_aap_clone_destination_path }}'
     single_branch: yes
     version: '{{ lb2193_aap_caac_aap_github_version }}'
-    become: yes
-    become_user: "{{ lb2193_aap_caac_aap_ssh_username }}"
+  become: yes
+  become_user: "{{ lb2193_aap_caac_aap_ssh_username }}"
     
 - name: Ensure ansible.cfg exists
   ansible.builtin.file:

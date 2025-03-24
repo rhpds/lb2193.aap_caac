@@ -3,7 +3,8 @@
 - name: Changing Nginx client max body size Value
   ansible.builtin.lineinfile:
     path: "{{ lb2193_aap_caac_nginx_conf_path }}"
-    insertafter: '    keepalive_timeout   65;'
+    insertafter: '^ *keepalive_timeout'
     line: '    client_max_body_size 200m;'
+    state: present
   become: true
   notify: Reload Nginx

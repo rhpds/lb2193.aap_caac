@@ -7,4 +7,4 @@
     line: '    client_max_body_size 200m;'
     state: present
   become: true
-  notify: Reload Nginx
+  notify: Restart Nginx

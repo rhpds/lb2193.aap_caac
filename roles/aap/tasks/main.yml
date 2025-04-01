@@ -17,6 +17,10 @@
     owner: "{{ lb2193_aap_caac_aap_ssh_username }}"
     group: "{{ lb2193_aap_caac_aap_ssh_username }}"
 
+- name: Install ansible-lint python package
+  ansible.builtin.pip:
+    name: ansible-lint
+
 - name: Configure ansible.cfg for Private Automation Hub
   ansible.builtin.blockinfile:
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg"

@@ -20,6 +20,9 @@
 - name: Install ansible-lint python package
   ansible.builtin.pip:
     name: ansible-lint
+    name:
+      - ansible-lint
+      - awxkit
 
 - name: Configure ansible.cfg for Private Automation Hub
   ansible.builtin.blockinfile:

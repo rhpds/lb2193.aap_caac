@@ -8,6 +8,11 @@ lb2193_aap_caac_aap_ansible_cfg_path : "/home/lab-user/casc_lab/"
 # username used to run the aap role
 lb2193_aap_caac_aap_ssh_username: '{{ student_name }}'
 
+# aap variables 
+lb2193_aap_caac_aap_hostname: "{{ aap_hostname }}"
+lb2193_aap_caac_aap_username: "{{ aap_username }}"
+lb2193_aap_caac_aap_password: "{{ aap_password }}"
+
 # PAH repos configuration
 
 # The below variables will be used for PAH authentication. 

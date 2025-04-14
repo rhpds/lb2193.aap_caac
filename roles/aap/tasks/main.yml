@@ -73,7 +73,7 @@
   ansible.builtin.blockinfile:
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}/group_vars/all/auth.yml"
     block: |
-      aap_hostname: "{{ lb2193_aap_caac_aap_hostname }}"
+      aap_hostname: "{{ lb2193_aap_caac_aap_hostname | regex_replace('^https://', '') }}"
       aap_username: "{{ lb2193_aap_caac_aap_username }}"
       aap_password: "{{ lb2193_aap_caac_aap_password }}"
       aap_validate_certs: false

@@ -10,8 +10,8 @@ lb2193_aap_caac_aap_ssh_username: '{{ student_name }}'
 
 # aap variables 
 lb2193_aap_caac_aap_hostname: "{{ aap_hostname }}"
-lb2193_aap_caac_aap_username: "{{ aap_username }}"
-lb2193_aap_caac_aap_password: "{{ aap_password }}"
+lb2193_aap_caac_aap_username: "{{ student_name }}"
+lb2193_aap_caac_aap_password: "{{ student_password }}"
 
 # PAH repos configuration
 

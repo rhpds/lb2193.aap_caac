@@ -104,7 +104,7 @@
     
 - name: configure Vautl.yml file
   ansible.builtin.blockinfile:
-    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}/vault.yml"
+    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}vault.yml"
     block: |
       vault_pass: "{{ lb2193_aap_caac_aap_password }}"
       aap_password: "{{ lb2193_aap_caac_aap_password }}"

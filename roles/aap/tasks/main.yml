@@ -16,7 +16,15 @@
     mode: "0644"
     owner: "{{ lb2193_aap_caac_aap_ssh_username }}"
     group: "{{ lb2193_aap_caac_aap_ssh_username }}"
-
+    
+- name: Ensure Vautl.yml exists
+  ansible.builtin.file:
+    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}vautl.yml"
+    state: touch
+    mode: "0644"
+    owner: "{{ lb2193_aap_caac_aap_ssh_username }}"
+    group: "{{ lb2193_aap_caac_aap_ssh_username }}"
+    
 - name: Install ansible-lint python package
   ansible.builtin.pip:
     name: ansible-lint
@@ -93,15 +101,7 @@
       
       ee_validate_certs: false
     marker: "# {mark} ANSIBLE MANAGED Variable configuration"
-
-- name: Ensure Vautl.yml exists
-  ansible.builtin.file:
-    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}vautl.yml"
-    state: touch
-    mode: "0644"
-    owner: "{{ lb2193_aap_caac_aap_ssh_username }}"
-    group: "{{ lb2193_aap_caac_aap_ssh_username }}"
-    
+  
 - name: configure Vautl.yml file
   ansible.builtin.blockinfile:
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}vault.yml"

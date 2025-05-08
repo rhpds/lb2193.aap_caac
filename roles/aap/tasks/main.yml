@@ -112,3 +112,4 @@
       aap_service_account_password: "{{ lb2193_aap_caac_aap_password }}"
       student_account: "{{ lb2193_aap_caac_aap_password }}"
     marker: "# {mark} ANSIBLE MANAGED Variable configuration"
+  ignore_errors: yes

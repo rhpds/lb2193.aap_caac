@@ -19,7 +19,7 @@
     
 - name: Ensure Vautl.yml exists
   ansible.builtin.file:
-    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}vautl.yml"
+    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}vault.yml"
     state: touch
     mode: "0644"
     owner: "{{ lb2193_aap_caac_aap_ssh_username }}"
@@ -112,4 +112,3 @@
       aap_service_account_password: "{{ lb2193_aap_caac_aap_password }}"
       student_account: "{{ lb2193_aap_caac_aap_password }}"
     marker: "# {mark} ANSIBLE MANAGED Variable configuration"
-  ignore_errors: yes

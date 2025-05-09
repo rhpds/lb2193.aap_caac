@@ -92,5 +92,5 @@
       aap_password: "{{ lb2193_aap_caac_aap_password }}"
       machine_pass: "{{ lb2193_aap_caac_aap_password }}"
       aap_service_account_password: "{{ lb2193_aap_caac_aap_password }}"
-      student_account: "{{ lb2193_aap_caac_aap_password }}"
+      student_account: "{{ lb2193_aap_caac_aap_username }}"
     marker: "# {mark} ANSIBLE MANAGED Variable configuration"

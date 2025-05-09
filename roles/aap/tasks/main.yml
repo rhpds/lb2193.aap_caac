@@ -83,14 +83,3 @@
     block: |
       aap_hostname: "{{ lb2193_aap_caac_aap_hostname | regex_replace('^https://', '') }}"
     marker: "# {mark} ANSIBLE MANAGED Variable configuration"
-  
-- name: configure Vautl.yml file
-  ansible.builtin.blockinfile:
-    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}vault.yml"
-    block: |
-      vault_pass: "{{ lb2193_aap_caac_aap_password }}"
-      aap_password: "{{ lb2193_aap_caac_aap_password }}"
-      machine_pass: "{{ lb2193_aap_caac_aap_password }}"
-      aap_service_account_password: "{{ lb2193_aap_caac_aap_password }}"
-      student_account: "{{ lb2193_aap_caac_aap_password }}"
-    marker: "# {mark} ANSIBLE MANAGED Variable configuration"

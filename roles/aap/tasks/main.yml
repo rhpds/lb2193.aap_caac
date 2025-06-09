@@ -68,6 +68,7 @@
     hub_collection_repositories: '{{ lb2193_aap_caac_aap_hub_collection_repositories }}'
     hub_configuration_collection_repository_sync_async_delay: 5
     hub_configuration_collection_repository_sync_async_retries: 150
+  ignore_errors: yes
 
 - name: Install specific Ansible collections
   ansible.builtin.command: "ANSIBLE_CONFIG={{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg ansible-galaxy collection install {{ item }}"

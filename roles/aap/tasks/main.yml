@@ -54,12 +54,14 @@
     name: infra.aap_configuration.hub_collection_remote
   vars:
     hub_collection_remotes: '{{ lb2193_aap_caac_aap_hub_collection_remotes }}'
+  ignore_errors: yes
 
 - name: Include collection repository role
   ansible.builtin.include_role:
     name: infra.aap_configuration.hub_collection_repository
   vars:
     hub_collection_repositories: '{{ lb2193_aap_caac_aap_hub_collection_repositories }}'
+  ignore_errors: yes
 
 - name: Include collection repository role
   ansible.builtin.include_role:

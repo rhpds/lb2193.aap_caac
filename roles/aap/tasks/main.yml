@@ -39,7 +39,14 @@
     name:
       - ansible-lint
       - awxkit
-
+      
+- name: configure auth.yml file
+  ansible.builtin.blockinfile:
+    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}/group_vars/all/auth.yml"
+    block: |
+      aap_hostname: "{{ lb2193_aap_caac_aap_hostname | regex_replace('^https://', '') }}"
+    marker: "# {mark} ANSIBLE MANAGED Variable configuration"
+    
 - name: Configure ansible.cfg for Private Automation Hub
   ansible.builtin.blockinfile:
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg"
@@ -88,9 +95,4 @@
     hub_configuration_collection_repository_sync_async_retries: 150
   ignore_errors: yes
 
-- name: configure auth.yml file
-  ansible.builtin.blockinfile:
-    path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}/group_vars/all/auth.yml"
-    block: |
-      aap_hostname: "{{ lb2193_aap_caac_aap_hostname | regex_replace('^https://', '') }}"
-    marker: "# {mark} ANSIBLE MANAGED Variable configuration"
+

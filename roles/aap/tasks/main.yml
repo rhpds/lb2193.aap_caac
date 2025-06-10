@@ -57,6 +57,14 @@
       {% endfor %}
     marker: "# {mark} ANSIBLE MANAGED PRIVATE AUTOMATION HUB CONFIGURATION"
 
+- name: Install specific Ansible collections
+  ansible.builtin.command: "ANSIBLE_CONFIG={{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg ansible-galaxy collection install {{ item }}"
+  loop: "{{ lb2193_aap_caac_aap_collections_list }}"
+  args:
+    chdir: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}"
+  when: lb2193_aap_caac_aap_collections_list | length > 0
+  ignore_errors: yes
+  
 - name: Include collection remote role
   ansible.builtin.include_role:
     name: infra.aap_configuration.hub_collection_remote
@@ -78,14 +86,6 @@
     hub_collection_repositories: '{{ lb2193_aap_caac_aap_hub_collection_repositories }}'
     hub_configuration_collection_repository_sync_async_delay: 5
     hub_configuration_collection_repository_sync_async_retries: 150
-  ignore_errors: yes
-
-- name: Install specific Ansible collections
-  ansible.builtin.command: "ANSIBLE_CONFIG={{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg ansible-galaxy collection install {{ item }}"
-  loop: "{{ lb2193_aap_caac_aap_collections_list }}"
-  args:
-    chdir: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}"
-  when: lb2193_aap_caac_aap_collections_list | length > 0
   ignore_errors: yes
 
 - name: configure auth.yml file

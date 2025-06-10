@@ -8,7 +8,15 @@
     version: '{{ lb2193_aap_caac_aap_github_version }}'
   become: yes
   become_user: "{{ lb2193_aap_caac_aap_ssh_username }}"
-    
+  
+- name: Install specific Ansible collections
+  ansible.builtin.command: "ansible-galaxy collection install {{ item }}"
+  loop: "{{ lb2193_aap_caac_aap_collections_list }}"
+  args:
+    chdir: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}"
+  when: lb2193_aap_caac_aap_collections_list | length > 0
+  ignore_errors: yes
+  
 - name: Ensure ansible.cfg exists
   ansible.builtin.file:
     path: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg"

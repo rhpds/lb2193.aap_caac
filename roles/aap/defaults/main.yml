@@ -41,13 +41,12 @@ lb2193_aap_caac_aap_github_version: "base_files"
 
 # List of collection to be installed
 lb2193_aap_caac_aap_collections_list:
- - "ansible.platform:==2.5.20250213"
- - "ansible.controller:==4.6.8"
  - "containers.podman:==1.16.3"
  - "infra.ee_utilities:==4.0.0"
  - "infra.aap_configuration:==3.1.0"
  - "ansible.hub:==1.0.0"
-
+ - "ansible.platform:==2.5.20250213"
+ - "ansible.controller:==4.6.8"
 
 lb2193_aap_caac_aap_hub_collection_remotes:
   - name: community

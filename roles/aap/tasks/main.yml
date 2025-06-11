@@ -59,8 +59,10 @@
       {% for repo in lb2193_aap_caac_aap_private_ah_repos %}
       [galaxy_server.{{ repo.name }}]
       url={{ repo.url }}
+      {% if repo.name != 'community' %}
       username={{ lb2193_aap_caac_aap_private_ah_username }}
       password={{ lb2193_aap_caac_aap_private_ah_password }}
+      {% endif %}
       {% endfor %}
     marker: "# {mark} ANSIBLE MANAGED PRIVATE AUTOMATION HUB CONFIGURATION"
 

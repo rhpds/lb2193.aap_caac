@@ -31,7 +31,7 @@ lb2193_aap_caac_aap_private_ah_repos:
  - name: validated
    url: "{{aap_hostname}}/pulp_ansible/galaxy/validated/"
  - name: community
-   url: "{{aap_hostname}}/pulp_ansible/galaxy/community/"
+   url: "https://galaxy.ansible.com/"
 
 # cloning github repo on the particular destination: 
 

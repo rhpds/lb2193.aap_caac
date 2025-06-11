@@ -86,13 +86,13 @@
     hub_collection_repositories: '{{ lb2193_aap_caac_aap_hub_collection_repositories }}'
   ignore_errors: yes
 
-#- name: Include collection repository role
-#  ansible.builtin.include_role:
-#    name: infra.aap_configuration.hub_collection_repository_sync
-#  vars:
-#    hub_collection_repositories: '{{ lb2193_aap_caac_aap_hub_collection_repositories }}'
-#    hub_configuration_collection_repository_sync_async_delay: 5
-#    hub_configuration_collection_repository_sync_async_retries: 150
-#  ignore_errors: yes
+- name: Include collection repository role
+  ansible.builtin.include_role:
+    name: infra.aap_configuration.hub_collection_repository_sync
+  vars:
+    hub_collection_repositories: '{{ lb2193_aap_caac_aap_hub_collection_repositories }}'
+    hub_configuration_collection_repository_sync_async_delay: 5
+    hub_configuration_collection_repository_sync_async_retries: 150
+  ignore_errors: yes
 
 

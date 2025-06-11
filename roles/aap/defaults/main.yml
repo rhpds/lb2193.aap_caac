@@ -62,8 +62,6 @@ lb2193_aap_caac_aap_hub_collection_remotes:
         version: ">=10.4.0"
       - name: infra.aap_configuration
         version: ">=3.1.0"
-      - name: awx.awx
-
 
 lb2193_aap_caac_aap_hub_collection_repositories:
   - name: community

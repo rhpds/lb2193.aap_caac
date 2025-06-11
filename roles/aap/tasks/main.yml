@@ -65,7 +65,7 @@
     marker: "# {mark} ANSIBLE MANAGED PRIVATE AUTOMATION HUB CONFIGURATION"
 
 - name: Install specific Ansible collections
-  ansible.builtin.command: "ANSIBLE_CONFIG={{ lb2193_aap_caac_aap_ansible_cfg_path }}ansible.cfg ansible-galaxy collection install {{ item }}"
+  ansible.builtin.command: "ansible-galaxy collection install {{ item }}"
   loop: "{{ lb2193_aap_caac_aap_collections_list }}"
   args:
     chdir: "{{ lb2193_aap_caac_aap_ansible_cfg_path }}"
